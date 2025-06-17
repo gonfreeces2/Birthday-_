@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sneha!</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="balloon-container"></div>
+  <div class="heart-container"></div>
+  <div class="container">
+    <h1>🎉 Happy Birthday, Sneha! 🎂</h1>
+    <p class="message">Happy Birthday cutie 💖</p>
+    <button onclick="playMusic()">Play Song</button>
+    <audio id="birthdayMusic" src="music.mp3"></audio>
+  </div>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    setInterval(() => {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 3000);
+  </script>
+
+  <!-- Balloons & Hearts -->
+  <script src="visuals.js"></script>
+
+  <!-- Music -->
+  <script>
+    function playMusic() {
+      document.getElementById('birthdayMusic').play();
+    }
+  </script>
+</body>
+</html>

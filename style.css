@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+  overflow: hidden;
+  text-align: center;
+}
+
+.container {
+  padding: 50px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 2.5em;
+}
+
+.message {
+  font-size: 1.3em;
+  color: #333;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+.balloon, .heart {
+  position: absolute;
+  animation: float 10s linear infinite;
+  z-index: 1;
+}
+
+.balloon {
+  width: 40px;
+  height: 60px;
+  background-color: pink;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: inset -5px -10px rgba(0,0,0,0.1);
+}
+
+.heart {
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(-45deg);
+  animation: float 8s linear infinite;
+}
+
+.heart:before, .heart:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
